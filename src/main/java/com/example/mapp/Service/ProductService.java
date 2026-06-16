@@ -34,6 +34,7 @@ public class ProductService {
 
          productRepository.save(product);
          log.info( "product {} is saved",  product.getId() );
+         log.info( "Successfully created product {}",  product.getId() );
 
 
     }
@@ -57,5 +58,6 @@ public class ProductService {
                 .quantity(product.getQuantity())
                 .build();
     }
+
 
 }
