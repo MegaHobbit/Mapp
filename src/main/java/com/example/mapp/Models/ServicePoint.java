@@ -1,15 +1,19 @@
 package com.example.mapp.Models;
 
 import com.example.mapp.Enums.ServicePointStatus;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
-@Table(name = "servicePoint")
 
 public class ServicePoint extends BaseEntity {
 
@@ -17,4 +21,7 @@ public class ServicePoint extends BaseEntity {
     private String servicePointName;
     private String description;
     private ServicePointStatus status;
+
+
+
 }

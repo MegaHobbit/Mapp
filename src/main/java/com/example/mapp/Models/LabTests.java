@@ -1,5 +1,6 @@
 package com.example.mapp.Models;
-import com.example.mapp.Enums.RadStatus;
+
+import com.example.mapp.Enums.ProductStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -13,22 +14,20 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 
-public class Radiology extends BaseEntity {
+public class LabTests extends BaseEntity {
 
-    private String radiologyNumber;
-    private BigDecimal price;
+    private Long testId;
     private String description;
     private String category;
     private BigDecimal amount;
-    private RadStatus radStatus;
+    private Long quantity;
+    private ProductStatus status;
 
     @ManyToOne
-    @JoinColumn(name = "patient_id")
-    private Patient patient;
+    @JoinColumn(name = "lab_id")
+    private Lab lab;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Products product;
-
-
+    @JoinColumn(name = "item_id")
+    private Products products;
 }

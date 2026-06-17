@@ -1,17 +1,27 @@
 package com.example.mapp.Models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
-@Table(name = "department")
 public class Department extends BaseEntity{
 
     private String depId;
     private String depName;
     private String depDescription;
+
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+    private List<Employees> employees = new ArrayList<>();
+
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+    private List<Products> products = new ArrayList<>();
 }
