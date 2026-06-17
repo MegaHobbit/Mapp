@@ -2,24 +2,20 @@ package com.example.mapp.Models;
 
 
 import com.example.mapp.Enums.ProductStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
-
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
 @Builder
 
-public class Product extends BaseEntity {
+public class Products extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String description;
@@ -30,5 +26,9 @@ public class Product extends BaseEntity {
     private double sellingPrice;
     private ProductStatus status;
     private String supplier;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 
 }

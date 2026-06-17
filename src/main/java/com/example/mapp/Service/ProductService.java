@@ -1,6 +1,6 @@
 package com.example.mapp.Service;
 
-import com.example.mapp.Models.Product;
+import com.example.mapp.Models.Products;
 import com.example.mapp.Repositories.ProductRepository;
 import com.example.mapp.dto.ProductRequest;
 import com.example.mapp.dto.ProductResponse;
@@ -24,7 +24,7 @@ public class ProductService {
 
     public void createProduct(ProductRequest productRequest) {
 
-         Product product = Product.builder()
+         Products product = Products.builder()
                  .name(productRequest.getName())
                  .description(productRequest.getDescription())
                  .buyingPrice(productRequest.getBuyingPrice())
@@ -41,13 +41,13 @@ public class ProductService {
 
     public List<ProductResponse> getAllProducts() {
 
-        List<Product> products = productRepository.findAll();
+        List<Products> products = productRepository.findAll();
 
         return products.stream().map(this::mapToProductResponse).toList();
     }
 
 
-    private ProductResponse mapToProductResponse(Product product) {
+    private ProductResponse mapToProductResponse(Products product) {
 
         return ProductResponse.builder()
 
