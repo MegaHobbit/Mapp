@@ -15,6 +15,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Table(name = "doctors")
 public class Doctors extends Person {
     private String doctorRegNumber;
     private String doctorAccNumber;

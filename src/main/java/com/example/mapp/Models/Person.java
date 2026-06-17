@@ -1,11 +1,8 @@
 package com.example.mapp.Models;
 
 import com.example.mapp.Enums.Gender;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -15,6 +12,8 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "person")
 public class Person extends BaseEntity {
 
     @Id

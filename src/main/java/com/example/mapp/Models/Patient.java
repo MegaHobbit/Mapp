@@ -11,15 +11,13 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-
-
+@Table(name = "patients")
 public class Patient extends Person {
 
     private LocalDateTime visitDate;
     private String visitNumber;
     private VisitStatus visitStatus;
     private VisitType visitType;
-
 
     @ManyToOne
     @JoinColumn(name = "service_point_id")
