@@ -23,6 +23,11 @@ public class ProductController {
         productService.createProduct(productRequest);
 
     }
+    @PostMapping("api/product/batch")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createProducts(@RequestBody List<ProductRequest> products) {
+        productService.createProducts(products);
+    }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)

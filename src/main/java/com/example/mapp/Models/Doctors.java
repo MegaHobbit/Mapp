@@ -19,7 +19,7 @@ import java.util.List;
 public class Doctors extends Person {
     private String doctorRegNumber;
     private String doctorAccNumber;
-    private DoctorStatus doctorStatus;
+    private DoctorStatus status;
 
     @OneToMany(mappedBy = "doctors", cascade = CascadeType.ALL)
     private List<Patient> patients = new ArrayList<>();

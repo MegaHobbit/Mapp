@@ -60,4 +60,19 @@ public class ProductService {
     }
 
 
+    public void createProducts(List<ProductRequest> products) {
+
+        List<Products> productList = products.stream()
+                .map(p -> Products.builder()
+                        .name(p.getName())
+                        .description(p.getDescription())
+                        .quantity(p.getQuantity())
+                        .buyingPrice(p.getBuyingPrice())
+                        .sellingPrice(p.getSellingPrice())
+                        .build()
+                )
+                .toList();
+
+        productRepository.saveAll(productList);
+    }
 }
