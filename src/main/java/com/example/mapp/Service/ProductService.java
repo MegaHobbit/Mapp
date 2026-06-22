@@ -15,8 +15,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-@Getter
-@Setter
 public class ProductService {
 
     private final ProductRepository productRepository;
