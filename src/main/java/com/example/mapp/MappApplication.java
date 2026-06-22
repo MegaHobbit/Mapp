@@ -17,7 +17,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 		info = @Info(
 				title = "Mapp Match API",
 				version = "1.0",
-				description = "API for hjjkkk....",
+				description = "API's for MAPP System. Testing develop",
 				contact = @Contact(name = "Mapp Development Team")
 		)
 )
