@@ -24,7 +24,7 @@ public class InventoryController {
 
     @Operation(summary = "Check inventory stock", description = "Checks whether inventory exists and has quantity greater than zero for the given SKU code.")
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Stock statussss returned successfully")
+            @ApiResponse(responseCode = "200", description = "Stock status returned successfully")
     })
     @GetMapping("/{sku-code}")
     @ResponseStatus(HttpStatus.OK)
