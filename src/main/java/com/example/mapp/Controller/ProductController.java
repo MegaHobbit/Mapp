@@ -54,5 +54,13 @@ public class ProductController {
        return productService.getAllProducts();
     }
 
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.OK)
+    public String deleteProduct(@RequestParam  Long id ) {
+
+        productService.deleteProduct(id);
+        return "Product deleted successfully";
+    }
+
 
 }

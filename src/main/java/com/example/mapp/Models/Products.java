@@ -15,8 +15,6 @@ import lombok.*;
 
 public class Products extends BaseEntity {
 
-    @Id
-    private Long id;
     private String name;
     private String description;
     private String category;
@@ -24,8 +22,12 @@ public class Products extends BaseEntity {
     private double quantity;
     private double buyingPrice;
     private double sellingPrice;
+
+    @Enumerated(EnumType.STRING)
     private ProductStatus status;
     private String supplier;
+
+    private Boolean deletedFlag = false;
 
     @ManyToOne
     @JoinColumn(name = "department_id")

@@ -1,8 +1,5 @@
 package com.example.mapp.Controller;
-
-import com.example.mapp.Models.Inventory;
 import com.example.mapp.Service.InventoryService;
-import com.example.mapp.dto.InventoryDelete;
 import com.example.mapp.dto.InventoryRequest;
 import com.example.mapp.dto.InventoryResponse;
 import com.example.mapp.dto.InventoryUpdate;
@@ -99,13 +96,14 @@ public class InventoryController {
     @DeleteMapping("/{sku-code}/product")
     @ResponseStatus(HttpStatus.OK)
     public String deleteInventoryProduct(
-            @PathVariable("sku-code") String skuCode,
-            @RequestBody InventoryDelete inventoryDelete
+            @PathVariable("sku-code") String skuCode
     ){
         inventoryService.deleteInventoryProduct(skuCode);
 
         return "Inventory product deleted successfully";
     }
+
+
 
 
 

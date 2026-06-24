@@ -4,11 +4,12 @@ import com.example.mapp.Models.Products;
 import com.example.mapp.Repositories.ProductRepository;
 import com.example.mapp.dto.ProductRequest;
 import com.example.mapp.dto.ProductResponse;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -72,5 +73,18 @@ public class ProductService {
                 .toList();
 
         productRepository.saveAll(productList);
+    }
+
+    @Transactional
+    public void deleteProduct(Long id) {
+
+        Products products = productRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Product item not found with name: "
+                ));
+
+        products.setDeletedFlag(true);
+        productRepository.save(products);
     }
 }
