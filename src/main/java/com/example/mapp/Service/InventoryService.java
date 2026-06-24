@@ -4,10 +4,12 @@ import com.example.mapp.Models.Inventory;
 import com.example.mapp.Repositories.InventoryRepository;
 import com.example.mapp.dto.InventoryRequest;
 import com.example.mapp.dto.InventoryUpdate;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Slf4j
 public class InventoryService {
 
     private final InventoryRepository inventoryRepository;
@@ -64,10 +66,10 @@ public class InventoryService {
         Inventory inventory = inventoryRepository.findBySkuCode(skuCode)
                 .orElseThrow(() -> new RuntimeException("Inventory item not found with SKU: " + skuCode));
 
-        inventoryRepository.delete(inventory);
+        inventory.setDeletedFlag(true);
+        inventoryRepository.save(inventory);
+
     }
-
-
 
 
 }
