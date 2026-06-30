@@ -1,6 +1,6 @@
-package com.example.mapp.Models;
+package com.example.mapp.model;
 
-import com.example.mapp.Enums.DoctorStatus;
+import com.example.mapp.Enum.DoctorStatus;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -16,7 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @Table(name = "doctors")
-public class Doctors extends Person {
+public class Doctor extends Person {
     private String doctorRegNumber;
     private String doctorAccNumber;
     private DoctorStatus status;

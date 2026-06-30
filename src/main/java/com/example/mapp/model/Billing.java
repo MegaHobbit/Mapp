@@ -1,4 +1,4 @@
-package com.example.mapp.Models;
+package com.example.mapp.model;
 
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -20,9 +20,6 @@ public class Billing extends BaseEntity{
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Products products;
 
     @ManyToOne
     @JoinColumn(name = "billing_id")

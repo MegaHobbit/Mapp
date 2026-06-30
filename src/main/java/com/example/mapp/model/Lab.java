@@ -1,6 +1,6 @@
-package com.example.mapp.Models;
+package com.example.mapp.model;
 
-import com.example.mapp.Enums.LabStatus;
+import com.example.mapp.Enum.LabStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,6 +23,6 @@ public class Lab extends BaseEntity {
     private Patient patient;
 
     @OneToMany(mappedBy = "lab", cascade = CascadeType.ALL)
-    private List<LabTests> labTests = new ArrayList<>();
+    private List<LabTest> labTests = new ArrayList<>();
 
 }

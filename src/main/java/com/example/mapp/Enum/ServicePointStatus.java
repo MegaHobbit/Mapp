@@ -1,4 +1,4 @@
-package com.example.mapp.Enums;
+package com.example.mapp.Enum;
 
 public enum ServicePointStatus {
 

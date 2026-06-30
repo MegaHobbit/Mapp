@@ -1,6 +1,6 @@
-package com.example.mapp.Models;
+package com.example.mapp.model;
 
-import com.example.mapp.Enums.PharmStatus;
+import com.example.mapp.Enum.PharmStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,7 +24,7 @@ public class Pharmacy extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "doctor_id")
-    private Doctors doctor;
+    private Doctor doctor;
 
     @OneToMany(mappedBy = "pharmacy")
     private List<Billing> billing = new ArrayList<>();

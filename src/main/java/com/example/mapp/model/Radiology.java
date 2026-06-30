@@ -1,9 +1,8 @@
-package com.example.mapp.Models;
-import com.example.mapp.Enums.RadStatus;
+package com.example.mapp.model;
+import com.example.mapp.Enum.RadStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,9 +25,6 @@ public class Radiology extends BaseEntity {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Products product;
 
 
 }

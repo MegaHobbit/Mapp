@@ -1,10 +1,9 @@
-package com.example.mapp.Models;
+package com.example.mapp.model;
 
-import com.example.mapp.Enums.ProductStatus;
+import com.example.mapp.Enum.ProductStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +13,7 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 
-public class LabTests extends BaseEntity {
+public class LabTest extends BaseEntity {
 
     private Long testId;
     private String description;
@@ -27,7 +26,4 @@ public class LabTests extends BaseEntity {
     @JoinColumn(name = "lab_id")
     private Lab lab;
 
-    @ManyToOne
-    @JoinColumn(name = "item_id")
-    private Products products;
 }

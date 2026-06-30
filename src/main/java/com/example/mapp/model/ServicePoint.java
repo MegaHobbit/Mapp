@@ -1,15 +1,9 @@
-package com.example.mapp.Models;
+package com.example.mapp.model;
 
-import com.example.mapp.Enums.ServicePointStatus;
-import jakarta.persistence.CascadeType;
+import com.example.mapp.Enum.ServicePointStatus;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
